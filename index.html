@@ -798,15 +798,31 @@ document.getElementById('enc').addEventListener('submit', async function(e) {
     return;
   }
 
+  // Envío via URL con parámetros GET (compatible con Apps Script CORS)
   try {
-    await fetch(SHEETS_URL, {
-      method:'POST', mode:'no-cors',
-      headers:{ 'Content-Type':'application/json' },
-      body: JSON.stringify(datos)
-    });
-    document.getElementById('enc').style.display = 'none';
-    document.getElementById('exito').style.display = 'block';
-    window.scrollTo({ top:0, behavior:'smooth' });
+    const params = new URLSearchParams({ payload: JSON.stringify(datos) });
+    const url = SHEETS_URL + '?' + params.toString();
+
+    const script = document.createElement('script');
+    script.src = url + '&callback=respuestaOK';
+    document.head.appendChild(script);
+
+    window.respuestaOK = function(resp) {
+      document.getElementById('enc').style.display = 'none';
+      document.getElementById('exito').style.display = 'block';
+      window.scrollTo({ top:0, behavior:'smooth' });
+      script.remove();
+    };
+
+    // Fallback: si en 5s no responde igual mostrar éxito (no-cors igual envía)
+    setTimeout(function() {
+      if (document.getElementById('enc').style.display !== 'none') {
+        document.getElementById('enc').style.display = 'none';
+        document.getElementById('exito').style.display = 'block';
+        window.scrollTo({ top:0, behavior:'smooth' });
+      }
+    }, 5000);
+
   } catch(err) {
     btn.disabled = false; btn.textContent = 'Enviar mis respuestas →';
     document.getElementById('msg-error').style.display = 'block';
