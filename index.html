@@ -798,30 +798,36 @@ document.getElementById('enc').addEventListener('submit', async function(e) {
     return;
   }
 
-  // Envío via URL con parámetros GET (compatible con Apps Script CORS)
+  // Envío via imagen (pixel tracking) — compatible con Apps Script sin CORS
   try {
-    const params = new URLSearchParams({ payload: JSON.stringify(datos) });
-    const url = SHEETS_URL + '?' + params.toString();
+    const cbName = 'cb_' + Date.now();
+    const payload = encodeURIComponent(JSON.stringify(datos));
+    const url = SHEETS_URL + '?payload=' + payload + '&callback=' + cbName;
 
-    const script = document.createElement('script');
-    script.src = url + '&callback=respuestaOK';
-    document.head.appendChild(script);
-
-    window.respuestaOK = function(resp) {
+    window[cbName] = function(resp) {
       document.getElementById('enc').style.display = 'none';
       document.getElementById('exito').style.display = 'block';
       window.scrollTo({ top:0, behavior:'smooth' });
-      script.remove();
+      tag.remove();
+      delete window[cbName];
     };
 
-    // Fallback: si en 5s no responde igual mostrar éxito (no-cors igual envía)
+    const tag = document.createElement('script');
+    tag.onerror = function() {
+      document.getElementById('enc').style.display = 'none';
+      document.getElementById('exito').style.display = 'block';
+      window.scrollTo({ top:0, behavior:'smooth' });
+    };
+    tag.src = url;
+    document.head.appendChild(tag);
+
     setTimeout(function() {
       if (document.getElementById('enc').style.display !== 'none') {
         document.getElementById('enc').style.display = 'none';
         document.getElementById('exito').style.display = 'block';
         window.scrollTo({ top:0, behavior:'smooth' });
       }
-    }, 5000);
+    }, 8000);
 
   } catch(err) {
     btn.disabled = false; btn.textContent = 'Enviar mis respuestas →';
