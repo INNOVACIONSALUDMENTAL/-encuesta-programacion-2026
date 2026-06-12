@@ -401,10 +401,11 @@
       <div class="pregunta">
         <label class="etiq">Tiempo de espera aproximado para primera atención en su área <span class="obl">*</span></label>
         <div class="ops-radio" id="tiempo-espera">
-          <label class="op"><input type="radio" name="tiempo_espera" value="Menos de 1 mes"> Menos de 1 mes</label>
-          <label class="op"><input type="radio" name="tiempo_espera" value="Entre 1 y 3 meses"> Entre 1 y 3 meses</label>
-          <label class="op"><input type="radio" name="tiempo_espera" value="Entre 3 y 6 meses"> Entre 3 y 6 meses</label>
-          <label class="op"><input type="radio" name="tiempo_espera" value="Más de 6 meses"> Más de 6 meses</label>
+          <label class="op"><input type="radio" name="tiempo_espera" value="Menos de 1 semana"> Menos de 1 semana</label>
+          <label class="op"><input type="radio" name="tiempo_espera" value="1 a 2 semanas"> 1 a 2 semanas</label>
+          <label class="op"><input type="radio" name="tiempo_espera" value="2 a 4 semanas"> 2 a 4 semanas</label>
+          <label class="op"><input type="radio" name="tiempo_espera" value="1 a 2 meses"> 1 a 2 meses</label>
+          <label class="op"><input type="radio" name="tiempo_espera" value="Más de 3 meses"> Más de 3 meses</label>
           <label class="op"><input type="radio" name="tiempo_espera" value="No aplica a mi función"> No aplica a mi función</label>
         </div>
         <div class="err" id="err-tiempo-espera">Seleccione una opción</div>
@@ -528,16 +529,16 @@
       </div>
 
       <div class="pregunta">
-        <label class="etiq">¿Qué aspectos de la programación actual funcionan bien y deberían mantenerse? <span class="opt-tag">opcional · puede marcar más de una</span></label>
+        <label class="etiq">¿Qué aspectos de la programación actual destacaría positivamente? <span class="opt-tag">opcional · puede marcar más de una</span></label>
         <div class="ops-check">
           <label class="op"><input type="checkbox" name="fortalezas" value="El equipo se coordina bien en general"> El equipo se coordina bien en general</label>
           <label class="op"><input type="checkbox" name="fortalezas" value="Los horarios de atención son adecuados para los usuarios"> Los horarios de atención son adecuados para los usuarios</label>
-          <label class="op"><input type="checkbox" name="fortalezas" value="La distribución de usuarios entre profesionales es justa"> La distribución de usuarios entre profesionales es justa</label>
+          <label class="op"><input type="checkbox" name="fortalezas" value="La carga de usuarios entre los profesionales es equitativa"> La carga de usuarios entre los profesionales es equitativa</label>
           <label class="op"><input type="checkbox" name="fortalezas" value="Hay flexibilidad para atender urgencias o imprevistos"> Hay flexibilidad para atender urgencias o imprevistos</label>
-          <label class="op"><input type="checkbox" name="fortalezas" value="Los criterios clínicos se respetan en la programación"> Los criterios clínicos se respetan en la programación</label>
+          <label class="op"><input type="checkbox" name="fortalezas" value="La programación considera las necesidades clínicas de los usuarios"> La programación considera las necesidades clínicas de los usuarios</label>
           <label class="op"><input type="checkbox" name="fortalezas" value="Las reuniones de equipo son bien aprovechadas"> Las reuniones de equipo son bien aprovechadas</label>
           <label class="op"><input type="checkbox" name="fortalezas" value="Existe buena comunicación con la jefatura del establecimiento"> Existe buena comunicación con la jefatura del establecimiento</label>
-          <label class="op"><input type="checkbox" name="fortalezas" value="La coordinación entre sedes Cauquenes/Chanco funciona bien"> La coordinación entre sedes funciona bien</label>
+          <label class="op"><input type="checkbox" name="fortalezas" value="La comunicación entre las sedes Cauquenes y Chanco es fluida"> La comunicación entre las sedes Cauquenes y Chanco es fluida</label>
         </div>
       </div>
 
@@ -587,6 +588,12 @@
           <label class="op"><input type="checkbox" name="dificultades" value="Dificultad para coordinar con otros equipos o servicios"> Dificultad para coordinar con otros equipos o servicios</label>
           <label class="op"><input type="checkbox" name="dificultades" value="Dificultad por distancia o traslado entre sedes"> Dificultad por distancia o traslado entre sedes</label>
           <label class="op"><input type="checkbox" name="dificultades" value="Falta de tiempo para actividades comunitarias o intersectoriales"> Falta de tiempo para actividades comunitarias o intersectoriales</label>
+          <label class="op"><input type="checkbox" name="dificultades" value="Falta de insumos o materiales de trabajo"> Falta de insumos o materiales de trabajo <span style="font-size:11px;color:var(--texto-hint);font-style:italic;">· ej: formularios, material de oficina, implementos para talleres, equipamiento</span></label>
+          <label class="op"><input type="checkbox" name="dificultades" value="Otro"> Otro</label>
+        </div>
+        <div class="pregunta" style="margin-top:0.65rem;margin-bottom:0.75rem;">
+          <label class="etiq" for="dificultad-otro" style="font-weight:400;font-size:13px;color:var(--texto-sec);">Si marcó Otro, especifique</label>
+          <input type="text" id="dificultad-otro" name="dificultad_otro" placeholder="Describa brevemente...">
         </div>
         <div class="err" id="err-dificultades">Seleccione al menos una opción</div>
       </div>
@@ -630,8 +637,13 @@
           <label class="op"><input type="checkbox" name="prestaciones" value="Psicoeducación y trabajo con familias"> Psicoeducación y trabajo con familias</label>
           <label class="op"><input type="checkbox" name="prestaciones" value="Actividades comunitarias e intersectoriales"> Actividades comunitarias e intersectoriales</label>
           <label class="op"><input type="checkbox" name="prestaciones" value="Consultoría hacia equipos de APS"> Consultoría hacia equipos de APS <span style="font-size:11px;color:var(--texto-hint);font-style:italic;">· en implementación progresiva</span></label>
-          <label class="op"><input type="checkbox" name="prestaciones" value="Rehabilitación psicosocial"> Rehabilitación psicosocial</label>
-          <label class="op"><input type="checkbox" name="prestaciones" value="Actividades de cuidado del equipo (supervisión, autocuidado)"> Actividades de cuidado del equipo (supervisión, autocuidado)</label>
+          <label class="op"><input type="checkbox" name="prestaciones" value="Talleres de habilidades para la vida y reinserción social"> Talleres de habilidades para la vida y reinserción social</label>
+          <label class="op"><input type="checkbox" name="prestaciones" value="Actividades de cuidado del equipo (espacios de reflexión clínica y autocuidado)"> Actividades de cuidado del equipo (espacios de reflexión clínica y autocuidado)</label>
+          <label class="op"><input type="checkbox" name="prestaciones" value="Otro"> Otro</label>
+        </div>
+        <div class="pregunta" style="margin-top:0.65rem;margin-bottom:0;">
+          <label class="etiq" for="prestacion-otro" style="font-weight:400;font-size:13px;color:var(--texto-sec);">Si marcó Otro, especifique</label>
+          <input type="text" id="prestacion-otro" name="prestacion_otro" placeholder="Describa brevemente...">
         </div>
       </div>
 
@@ -784,6 +796,8 @@ document.getElementById('enc').addEventListener('submit', async function(e) {
     actividades_insuficientes: getChecked('subprog'),
     subprog_otro: document.getElementById('subprog-otro').value,
     prestaciones_ampliar: getChecked('prestaciones'),
+    prestacion_otro: document.getElementById('prestacion-otro')?.value || '',
+    dificultad_otro: document.getElementById('dificultad-otro')?.value || '',
     cambios_concretos: document.getElementById('cambios').value,
     comentario_adicional: document.getElementById('comentario').value
   };
