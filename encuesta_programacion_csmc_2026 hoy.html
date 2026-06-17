@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Levantamiento de Programación 2026 — CSMC Cauquenes</title>
+<title>Diagnóstico de Programación 2026 — CSMC Cauquenes</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -284,7 +284,7 @@
 <div class="encabezado">
   <div class="encabezado-inner">
     <p class="inst">Servicio de Salud Maule · CSMC Provincial Cauquenes</p>
-    <h1>Levantamiento de Necesidades de Programación 2026</h1>
+    <h1>Diagnóstico de Programación 2026</h1>
     <p class="sub">Comité de Programación Médica y No Médica · Res. Exenta N°1837/2026 · Tiempo estimado: 7 minutos</p>
   </div>
 </div>
@@ -300,8 +300,8 @@
 <div class="cont">
 
   <div class="aviso">
-    <strong>Levantamiento de Necesidades de Programación 2026</strong>
-    El presente levantamiento se enmarca en el funcionamiento del Comité de Programación Médica y No Médica del CSMC Provincial Cauquenes, constituido mediante Resolución Exenta N°1837/2026 del Servicio de Salud Maule. Su objetivo es obtener información desde los propios equipos para sustentar una propuesta de programación 2026 coherente con la realidad operativa del establecimiento. La participación es voluntaria y las respuestas son de carácter confidencial.
+    <strong>Diagnóstico de Programación 2026</strong>
+    El presente diagnóstico se enmarca en el funcionamiento del Comité de Programación Médica y No Médica del CSMC Provincial Cauquenes, constituido mediante Resolución Exenta N°1837/2026 del Servicio de Salud Maule. Su objetivo es realizar un diagnóstico de la situación actual de la programación, que servirá como antecedente técnico para el comité. Este instrumento no constituye un compromiso de modificación inmediata de la programación individual. La participación es voluntaria y las respuestas son de carácter confidencial.
   </div>
 
   <div class="aviso-neutral">
@@ -328,8 +328,17 @@
           <div class="hint">Categoría amplia de su cargo</div>
           <select id="estamento" name="estamento" required>
             <option value="">Seleccione...</option>
-            <option>Profesional médico</option>
-            <option>Profesional no médico</option>
+            <option>Médico Psiquiatra Adultos</option>
+            <option>Médico Psiquiatra Infanto Juvenil</option>
+            <option>Médico General</option>
+            <option>Psicólogo/a</option>
+            <option>Trabajador/a Social</option>
+            <option>Terapeuta Ocupacional</option>
+            <option>Enfermero/a</option>
+            <option>Fonoaudiólogo/a</option>
+            <option>Psicopedagogo/a</option>
+            <option>Químico/a Farmacéutico/a</option>
+            <option>Otra profesión</option>
           </select>
           <div class="err" id="err-estamento">Seleccione su estamento</div>
         </div>
@@ -424,6 +433,19 @@
         </div>
         <div class="err" id="err-periodicidad">Seleccione una opción</div>
       </div>
+
+      <div class="pregunta">
+        <label class="etiq">¿Su programación contempla instancias normadas de coordinación clínica? <span class="opt-tag">opcional · puede marcar más de una</span></label>
+        <div class="hint">Por ejemplo: Comité Clínico, Reunión Técnica-Administrativa, Consultoría de Salud Mental, Comité de Programación.</div>
+        <div class="ops-check">
+          <label class="op"><input type="checkbox" name="microgestion" value="Sí, participo regularmente en Comité Clínico"> Sí, participo regularmente en Comité Clínico</label>
+          <label class="op"><input type="checkbox" name="microgestion" value="Sí, participo regularmente en Reunión Técnica-Administrativa"> Sí, participo regularmente en Reunión Técnica-Administrativa</label>
+          <label class="op"><input type="checkbox" name="microgestion" value="Sí, participo en Consultoría de Salud Mental con APS"> Sí, participo en Consultoría de Salud Mental con APS</label>
+          <label class="op"><input type="checkbox" name="microgestion" value="Tengo programadas estas instancias pero rara vez se realizan"> Tengo estas instancias programadas, pero rara vez se realizan en la práctica</label>
+          <label class="op"><input type="checkbox" name="microgestion" value="No tengo estas instancias en mi programación"> No tengo estas instancias en mi programación</label>
+          <label class="op"><input type="checkbox" name="microgestion" value="No aplica a mi función"> No aplica a mi función</label>
+        </div>
+      </div>
     </div>
 
     <!-- ══════════════════════════════════════════
@@ -454,8 +476,8 @@
       </div>
 
       <div class="pregunta">
-        <label class="etiq">¿La cantidad de tiempo que tiene programado para atender usuarios es suficiente para hacer bien su trabajo? <span class="obl">*</span></label>
-        <div class="hint">Considere si el tiempo asignado a atención directa le permite atender con la calidad y periodicidad que cada usuario requiere.</div>
+        <label class="etiq">¿La cantidad de prestaciones que tiene programadas le permite atender adecuadamente a sus usuarios? <span class="obl">*</span></label>
+        <div class="hint">Considere si el número de atenciones, controles o sesiones que tiene asignadas es razonable para la complejidad y necesidad real de sus usuarios.</div>
         <div class="likert-wrap">
           <div class="likert-extremos"><span>1 · Muy insuficiente</span><span>5 · Totalmente suficiente</span></div>
           <div class="likert-btns">
@@ -484,35 +506,9 @@
         <div class="err" id="err-info-criterios">Seleccione un valor</div>
       </div>
 
-      <div class="pregunta">
-        <label class="etiq">¿Su carga laboral actual es manejable? <span class="obl">*</span></label>
-        <div class="likert-wrap">
-          <div class="likert-extremos"><span>1 · Totalmente sobrecargado/a</span><span>5 · Completamente manejable</span></div>
-          <div class="likert-btns">
-            <div class="lbtn"><input type="radio" id="cl1" name="carga_laboral" value="1"><label for="cl1">1</label></div>
-            <div class="lbtn"><input type="radio" id="cl2" name="carga_laboral" value="2"><label for="cl2">2</label></div>
-            <div class="lbtn"><input type="radio" id="cl3" name="carga_laboral" value="3"><label for="cl3">3</label></div>
-            <div class="lbtn"><input type="radio" id="cl4" name="carga_laboral" value="4"><label for="cl4">4</label></div>
-            <div class="lbtn"><input type="radio" id="cl5" name="carga_laboral" value="5"><label for="cl5">5</label></div>
-          </div>
-        </div>
-        <div class="err" id="err-carga-laboral">Seleccione un valor</div>
-      </div>
 
-      <div class="pregunta">
-        <label class="etiq">¿Cómo evalúa su bienestar laboral general actualmente? <span class="obl">*</span></label>
-        <div class="likert-wrap">
-          <div class="likert-extremos"><span>1 · Muy deteriorado</span><span>5 · Muy bueno</span></div>
-          <div class="likert-btns">
-            <div class="lbtn"><input type="radio" id="bl1" name="bienestar" value="1"><label for="bl1">1</label></div>
-            <div class="lbtn"><input type="radio" id="bl2" name="bienestar" value="2"><label for="bl2">2</label></div>
-            <div class="lbtn"><input type="radio" id="bl3" name="bienestar" value="3"><label for="bl3">3</label></div>
-            <div class="lbtn"><input type="radio" id="bl4" name="bienestar" value="4"><label for="bl4">4</label></div>
-            <div class="lbtn"><input type="radio" id="bl5" name="bienestar" value="5"><label for="bl5">5</label></div>
-          </div>
-        </div>
-        <div class="err" id="err-bienestar">Seleccione un valor</div>
-      </div>
+
+
     </div>
 
     <!-- ══════════════════════════════════════════
@@ -531,10 +527,9 @@
         <label class="etiq">¿Qué aspectos de su propia programación destacaría positivamente? <span class="opt-tag">opcional · puede marcar más de una</span></label>
         <div class="hint">Piense en su agenda y forma de trabajo actual, no en la del equipo en general.</div>
         <div class="ops-check">
-          <label class="op"><input type="checkbox" name="fortalezas" value="El tiempo asignado a atención directa es adecuado"> El tiempo que tengo asignado para atención directa es adecuado</label>
+          <label class="op"><input type="checkbox" name="fortalezas" value="La cantidad de prestaciones y de usuarios que tengo asignados son equilibradas"> La cantidad de prestaciones y de usuarios que tengo asignados son equilibradas</label>
           <label class="op"><input type="checkbox" name="fortalezas" value="El horario de atención se ajusta a las necesidades de mis usuarios"> Mi horario de atención se ajusta bien a las necesidades de mis usuarios</label>
           <label class="op"><input type="checkbox" name="fortalezas" value="La programación tiene flexibilidad para urgencias o imprevistos"> Mi programación tiene flexibilidad para atender urgencias o imprevistos</label>
-          <label class="op"><input type="checkbox" name="fortalezas" value="La cantidad de usuarios a cargo es manejable con el tiempo disponible"> La cantidad de usuarios que tengo a cargo es manejable con el tiempo disponible</label>
           <label class="op"><input type="checkbox" name="fortalezas" value="La programación permite responder a las necesidades clínicas de mis usuarios"> Mi programación me permite responder a las necesidades clínicas de mis usuarios</label>
           <label class="op"><input type="checkbox" name="fortalezas" value="La programación incluye tiempo suficiente para reuniones de equipo"> Mi programación incluye tiempo suficiente para reuniones de equipo</label>
           <label class="op"><input type="checkbox" name="fortalezas" value="La programación contempla tiempo para coordinarme con otros profesionales"> Mi programación contempla tiempo para coordinarme con otros profesionales o equipos</label>
@@ -542,19 +537,7 @@
         </div>
       </div>
 
-      <div class="pregunta">
-        <label class="etiq">¿Cuánto valora su trabajo en el CSMC actualmente? <span class="opt-tag">opcional</span></label>
-        <div class="likert-wrap likert-amber">
-          <div class="likert-extremos"><span>1 · Muy poco</span><span>5 · Mucho</span></div>
-          <div class="likert-btns">
-            <div class="lbtn"><input type="radio" id="vl1" name="valoracion" value="1"><label for="vl1">1</label></div>
-            <div class="lbtn"><input type="radio" id="vl2" name="valoracion" value="2"><label for="vl2">2</label></div>
-            <div class="lbtn"><input type="radio" id="vl3" name="valoracion" value="3"><label for="vl3">3</label></div>
-            <div class="lbtn"><input type="radio" id="vl4" name="valoracion" value="4"><label for="vl4">4</label></div>
-            <div class="lbtn"><input type="radio" id="vl5" name="valoracion" value="5"><label for="vl5">5</label></div>
-          </div>
-        </div>
-      </div>
+
 
       <div class="pregunta">
         <label class="etiq" for="fortaleza-libre">¿Hay algo concreto de la programación actual que quiera destacar como fortaleza? <span class="opt-tag">opcional</span></label>
@@ -588,7 +571,6 @@
           <label class="op"><input type="checkbox" name="dificultades" value="Mi programación no facilita la coordinación con otros equipos o servicios"> Mi programación no facilita la coordinación con otros equipos o servicios</label>
           <label class="op"><input type="checkbox" name="dificultades" value="Mi programación no contempla adecuadamente los tiempos de traslado entre sedes"> Mi programación no contempla adecuadamente los tiempos de traslado entre sedes</label>
           <label class="op"><input type="checkbox" name="dificultades" value="Mi programación no deja tiempo para actividades comunitarias o intersectoriales"> Mi programación no deja tiempo para actividades comunitarias o intersectoriales</label>
-          <label class="op"><input type="checkbox" name="dificultades" value="Mi programación se ve afectada por falta de insumos o materiales de trabajo"> Mi programación se ve afectada por falta de insumos o materiales de trabajo <span style="font-size:11px;color:var(--texto-hint);font-style:italic;">· ej: formularios, material de oficina, implementos para talleres, equipamiento</span></label>
           <label class="op"><input type="checkbox" name="dificultades" value="Otro"> Otro</label>
         </div>
         <div class="pregunta" style="margin-top:0.65rem;margin-bottom:0.75rem;">
@@ -603,7 +585,8 @@
         <div class="ops-check">
           <label class="op"><input type="checkbox" name="subprog" value="Visitas domiciliarias"> Visitas domiciliarias</label>
           <label class="op"><input type="checkbox" name="subprog" value="Intervención grupal y psicoeducación"> Intervención grupal y psicoeducación <span style="font-size:11px;color:var(--texto-hint);font-style:italic;">· talleres, grupos terapéuticos, trabajo con familias</span></label>
-          <label class="op"><input type="checkbox" name="subprog" value="Trabajo comunitario, intersectorial y con APS"> Trabajo comunitario, intersectorial y con APS <span style="font-size:11px;color:var(--texto-hint);font-style:italic;">· en implementación progresiva</span></label>
+          <label class="op"><input type="checkbox" name="subprog" value="Trabajo comunitario e intersectorial"> Trabajo comunitario e intersectorial</label>
+          <label class="op"><input type="checkbox" name="subprog" value="Consultoría con APS"> Consultoría con APS <span style="font-size:11px;color:var(--texto-hint);font-style:italic;">· en implementación progresiva</span></label>
           <label class="op"><input type="checkbox" name="subprog" value="Reuniones técnicas, clínicas y de cuidado del equipo"> Reuniones técnicas, clínicas y de cuidado del equipo</label>
           <label class="op"><input type="checkbox" name="subprog" value="Capacitación y formación continua"> Capacitación y formación continua</label>
         </div>
@@ -631,7 +614,8 @@
         <div class="ops-check">
           <label class="op"><input type="checkbox" name="prestaciones" value="Visita domiciliaria integral de salud mental"> Visita domiciliaria integral de salud mental</label>
           <label class="op"><input type="checkbox" name="prestaciones" value="Intervención grupal, psicoeducación y talleres de habilidades"> Intervención grupal, psicoeducación y talleres de habilidades <span style="font-size:11px;color:var(--texto-hint);font-style:italic;">· talleres terapéuticos, trabajo con familias, reinserción social</span></label>
-          <label class="op"><input type="checkbox" name="prestaciones" value="Actividades comunitarias, intersectoriales y consultoría con APS"> Actividades comunitarias, intersectoriales y consultoría con APS <span style="font-size:11px;color:var(--texto-hint);font-style:italic;">· en implementación progresiva</span></label>
+          <label class="op"><input type="checkbox" name="prestaciones" value="Actividades comunitarias e intersectoriales"> Actividades comunitarias e intersectoriales</label>
+          <label class="op"><input type="checkbox" name="prestaciones" value="Consultoría con equipos de APS"> Consultoría con equipos de APS <span style="font-size:11px;color:var(--texto-hint);font-style:italic;">· en implementación progresiva</span></label>
           <label class="op"><input type="checkbox" name="prestaciones" value="Espacios de reflexión clínica y autocuidado del equipo"> Espacios de reflexión clínica y autocuidado del equipo</label>
           <label class="op"><input type="checkbox" name="prestaciones" value="Otro"> Otro</label>
         </div>
@@ -668,7 +652,7 @@
 
       <div class="nota-pie">
         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" style="flex-shrink:0;margin-top:1px"><circle cx="7.5" cy="7.5" r="7" stroke="#888780"/><path d="M7.5 4.5v4M7.5 10.5v.3" stroke="#888780" stroke-linecap="round"/></svg>
-        Sus respuestas serán procesadas de forma agregada por el Referente Equipo Cauquenes. Gracias por participar.
+        Sus respuestas serán procesadas de forma agregada por el Referente Equipo Cauquenes como antecedente técnico para el Comité de Programación. Gracias por participar.
       </div>
     </div>
 
@@ -687,7 +671,7 @@
       <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
     </div>
     <h2>Respuesta registrada con éxito</h2>
-    <p>Gracias por su participación. Sus respuestas serán parte de la propuesta de programación del CSMC Cauquenes 2026.</p>
+    <p>Gracias por su participación. Sus respuestas formarán parte del diagnóstico que se entregará como antecedente técnico al Comité de Programación.</p>
   </div>
 
 </div>
@@ -704,8 +688,6 @@ const RADIOS_OBL = [
   ['prog_usuarios','err-prog-usuarios'],
   ['dist_horas','err-dist-horas'],
   ['info_criterios','err-info-criterios'],
-  ['carga_laboral','err-carga-laboral'],
-  ['bienestar','err-bienestar'],
   ['satisfaccion_general','err-satisfaccion-general']
 ];
 
@@ -794,14 +776,12 @@ document.getElementById('enc').addEventListener('submit', async function(e) {
     lista_espera: getChecked('lista_espera'),
     tiempo_espera: getChecked('tiempo_espera'),
     periodicidad: getChecked('periodicidad'),
+    microgestion: getChecked('microgestion'),
     prog_usuarios: getChecked('prog_usuarios'),
     dist_horas: getChecked('dist_horas'),
     info_criterios: getChecked('info_criterios'),
-    carga_laboral: getChecked('carga_laboral'),
-    bienestar: getChecked('bienestar'),
     satisfaccion_general: getChecked('satisfaccion_general'),
     fortalezas: getChecked('fortalezas'),
-    valoracion_trabajo: getChecked('valoracion'),
     fortaleza_libre: document.getElementById('fortaleza-libre').value,
     nudos_programacion: getChecked('dificultades'),
     actividades_insuficientes: getChecked('subprog'),
