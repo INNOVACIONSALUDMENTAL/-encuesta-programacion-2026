@@ -301,7 +301,7 @@
 
   <div class="aviso">
     <strong>Diagnóstico de Programación 2026</strong>
-    El presente diagnóstico se enmarca en el funcionamiento del Comité de Programación Médica y No Médica del CSMC Provincial Cauquenes, constituido mediante Resolución Exenta N°1837/2026 del Servicio de Salud Maule. Su objetivo es realizar un diagnóstico de la situación actual de la programación, que servirá como antecedente técnico para el comité. Este instrumento no constituye un compromiso de modificación inmediata de la programación individual. La participación es voluntaria y las respuestas son de carácter confidencial.
+    El presente diagnóstico se enmarca en el funcionamiento del Comité de Programación Médica y No Médica del CSMC Provincial Cauquenes, constituido mediante Resolución Exenta N°1837/2026 del Servicio de Salud Maule. Su objetivo es realizar un diagnóstico de la situación actual de la programación, que servirá como antecedente técnico para el comité. La participación es voluntaria y las respuestas son de carácter confidencial.
   </div>
 
   <div class="aviso-neutral">
@@ -626,21 +626,6 @@
       </div>
 
       <div class="pregunta">
-        <label class="etiq">En general, ¿qué tan satisfecho/a está con su programación actual? <span class="obl">*</span></label>
-        <div class="likert-wrap">
-          <div class="likert-extremos"><span>1 · Muy insatisfecho/a</span><span>5 · Muy satisfecho/a</span></div>
-          <div class="likert-btns">
-            <div class="lbtn"><input type="radio" id="sg1" name="satisfaccion_general" value="1"><label for="sg1">1</label></div>
-            <div class="lbtn"><input type="radio" id="sg2" name="satisfaccion_general" value="2"><label for="sg2">2</label></div>
-            <div class="lbtn"><input type="radio" id="sg3" name="satisfaccion_general" value="3"><label for="sg3">3</label></div>
-            <div class="lbtn"><input type="radio" id="sg4" name="satisfaccion_general" value="4"><label for="sg4">4</label></div>
-            <div class="lbtn"><input type="radio" id="sg5" name="satisfaccion_general" value="5"><label for="sg5">5</label></div>
-          </div>
-        </div>
-        <div class="err" id="err-satisfaccion-general">Seleccione un valor</div>
-      </div>
-
-      <div class="pregunta">
         <label class="etiq" for="cambios">¿Qué cambio concreto en la programación tendría mayor impacto en su trabajo? <span class="opt-tag">opcional</span></label>
         <textarea id="cambios" name="cambios_concretos" placeholder="Describa el ajuste que más ayudaría a mejorar su programación diaria..."></textarea>
       </div>
@@ -687,8 +672,7 @@ const RADIOS_OBL = [
   ['periodicidad','err-periodicidad'],
   ['prog_usuarios','err-prog-usuarios'],
   ['dist_horas','err-dist-horas'],
-  ['info_criterios','err-info-criterios'],
-  ['satisfaccion_general','err-satisfaccion-general']
+  ['info_criterios','err-info-criterios']
 ];
 
 const TOTAL_OBL = 2 + RADIOS_OBL.length + 1;
@@ -780,7 +764,6 @@ document.getElementById('enc').addEventListener('submit', async function(e) {
     prog_usuarios: getChecked('prog_usuarios'),
     dist_horas: getChecked('dist_horas'),
     info_criterios: getChecked('info_criterios'),
-    satisfaccion_general: getChecked('satisfaccion_general'),
     fortalezas: getChecked('fortalezas'),
     fortaleza_libre: document.getElementById('fortaleza-libre').value,
     nudos_programacion: getChecked('dificultades'),
